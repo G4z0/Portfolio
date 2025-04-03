@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
+import { FiMail, FiMapPin } from 'react-icons/fi';
+import emailjs from '@emailjs/browser';
 
 const ContactSection = styled.section`
   background-color: var(--section-dark);
@@ -234,7 +235,7 @@ const Contact = () => {
     
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
-    } else if (!/^[A-Z0.9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) {
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) {
       newErrors.email = 'Invalid email address';
     }
     
@@ -273,7 +274,18 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      await emailjs.send(
+        'service_v6kidk1',
+        'template_lo87vcp',
+        {
+          title: formData.subject,
+          name: formData.name,
+          message: formData.message,
+          email: formData.email
+        },
+        '3KG9QPdyGwgAEBkZH'  // Updated public key
+      );
+      
       setShowSuccess(true);
       setFormData({
         name: '',
@@ -286,7 +298,11 @@ const Contact = () => {
         setShowSuccess(false);
       }, 5000);
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('Error sending email:', error);
+      setErrors(prev => ({
+        ...prev,
+        submit: 'Failed to send message. Please try again.'
+      }));
     } finally {
       setIsSubmitting(false);
     }
@@ -349,23 +365,7 @@ const Contact = () => {
               </IconBox>
               <ContactDetails>
                 <h3>Email</h3>
-                <p>contact@example.com</p>
-              </ContactDetails>
-            </ContactItem>
-
-            <ContactItem
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              whileHover={{ x: 10 }}
-            >
-              <IconBox>
-                <FiPhone />
-              </IconBox>
-              <ContactDetails>
-                <h3>Phone</h3>
-                <p>+1 (123) 456-7890</p>
+                <p>kamuil1234@gmail.com</p>
               </ContactDetails>
             </ContactItem>
 
@@ -381,7 +381,7 @@ const Contact = () => {
               </IconBox>
               <ContactDetails>
                 <h3>Location</h3>
-                <p>New York, NY</p>
+                <p>Poland, Crakow</p>
               </ContactDetails>
             </ContactItem>
           </ContactInfo>

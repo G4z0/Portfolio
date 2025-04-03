@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi';
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import profileImage from '../assets/images/profile/profile.jpg'; // Add this import
+import profileImage from '../assets/images/profile/profile.jpg';
 
 const HeroSection = styled.section`
   height: 100vh;

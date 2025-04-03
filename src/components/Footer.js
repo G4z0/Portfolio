@@ -65,15 +65,8 @@ const FooterLink = styled.a`
   }
 `;
 
-const Copyright = styled.p`
-  color: var(--text-tertiary);
-  text-align: center;
-  font-size: var(--fs-sm);
-`;
-
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-  
+
   return (
     <FooterContainer>
       <FooterContent>
@@ -103,10 +96,6 @@ const Footer = () => {
           <FooterLink href="#projects">Projects</FooterLink>
           <FooterLink href="#contact">Contact</FooterLink>
         </FooterNav>
-        
-        <Copyright>
-          &copy; {currentYear} Portfolio. All rights reserved.
-        </Copyright>
       </FooterContent>
     </FooterContainer>
   );
