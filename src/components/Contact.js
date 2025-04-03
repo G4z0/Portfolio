@@ -309,9 +309,8 @@ const Contact = () => {
   };
 
   const stats = [
-    { number: '100+', text: 'Successful Projects' },
-    { number: '50+', text: 'Happy Clients' },
-    { number: '5+', text: 'Years Experience' }
+    { number: '3', text: 'Successful Projects' },
+    { number: '2+', text: 'Years Experience' }
   ];
 
   return (
