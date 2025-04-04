@@ -189,57 +189,38 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'E-commerce Platform',
-      description: 'A full-featured e-commerce platform with shopping cart, payment integration, and admin dashboard. Features include real-time inventory management, user authentication, and analytics.',
+      title: 'Email Backup Tool',
+      description: 'An automatic email backup system that checks storage usage, finds messages older than a specified age, removes them from the server and stores them in a database including all data and attachments.',
       image: ecommerceImg,
-      tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      tech: ['Node.js', 'SQL', 'API Integration', 'File Management'],
       github: 'https://github.com',
       live: 'https://project-demo.com',
       category: 'fullstack'
     },
     {
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates and team features. Includes drag-and-drop boards, task assignments, and progress tracking.',
+      title: 'Email Database Frontend',
+      description: 'A frontend interface that works with the email backup tool. Allows users to filter archived messages, preview content, and download full emails or individual attachments from the database.',
       image: taskManagerImg,
-      tech: ['Next.js', 'TypeScript', 'Firebase', 'Tailwind'],
+      tech: ['React', 'JavaScript', 'SQL', 'REST API'],
       github: 'https://github.com',
       live: 'https://project-demo.com',
       category: 'frontend'
     },
     {
-      title: 'Travel Blog',
-      description: 'A responsive travel blog with CMS integration and dynamic content loading. Features include rich text editing, image optimization, and social sharing.',
+      title: 'Chrome Automation Extension',
+      description: 'A productivity Chrome extension that speeds up employee workflows by automating repetitive tasks. Reads data from web pages, automatically fills form fields, submits data, and closes forms to improve efficiency.',
       image: travelBlogImg,
-      tech: ['React', 'GraphQL', 'Contentful', 'Styled Components'],
+      tech: ['JavaScript', 'Chrome API', 'DOM Manipulation', 'HTML/CSS'],
       github: 'https://github.com',
       live: 'https://project-demo.com',
       category: 'frontend'
     },
-    {
-      title: 'Real-time Chat Application',
-      description: 'A modern chat application with real-time messaging, file sharing, and video calls. Supports group chats and direct messages.',
-      image: chatAppImg,
-      tech: ['React', 'Socket.io', 'WebRTC', 'Redis'],
-      github: 'https://github.com',
-      live: 'https://project-demo.com',
-      category: 'fullstack'
-    },
-    {
-      title: 'AI Image Generator',
-      description: 'An AI-powered image generation tool that creates unique artwork based on text descriptions. Features style transfer and image manipulation.',
-      image: aiGeneratorImg,
-      tech: ['Python', 'TensorFlow', 'FastAPI', 'React'],
-      github: 'https://github.com',
-      live: 'https://project-demo.com',
-      category: 'ai'
-    }
   ];
 
   const filters = [
     { label: 'All', value: 'all' },
     { label: 'Frontend', value: 'frontend' },
     { label: 'Full Stack', value: 'fullstack' },
-    { label: 'AI/ML', value: 'ai' }
   ];
 
   const filteredProjects = activeFilter === 'all' 
