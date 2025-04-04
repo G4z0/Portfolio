@@ -38,7 +38,7 @@ A modern, responsive portfolio website built with React to showcase my projects,
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/yourusername/portfolio-website.git
+   git clone https://github.com/G4zO/portfolio-website.git
    ```
 
 2. Navigate to the project directory
