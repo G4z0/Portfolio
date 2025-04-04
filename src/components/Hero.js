@@ -318,7 +318,7 @@ const Hero = () => {
           >
             <Greeting variants={itemVariants}>Hello, I'm</Greeting>
             <Name variants={itemVariants}>
-              John <span>Doe</span>
+              <span>Kamil</span>
             </Name>
             <JobTitle variants={itemVariants}>Frontend Developer</JobTitle>
             <Bio variants={itemVariants}>
