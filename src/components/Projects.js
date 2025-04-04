@@ -5,8 +5,7 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import ecommerceImg from '../assets/images/projects/ecommerce.jpg';
 import taskManagerImg from '../assets/images/projects/taskmanager.jpg';
 import travelBlogImg from '../assets/images/projects/travelblog.jpg';
-import chatAppImg from '../assets/images/projects/chatapp.jpg';
-import aiGeneratorImg from '../assets/images/projects/aigenerator.jpg';
+
 
 const ProjectsSection = styled.section`
   background-color: var(--section-light);

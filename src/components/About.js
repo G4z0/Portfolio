@@ -148,12 +148,12 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <StatItem>
-              <h3>3+</h3>
+              <h3>2+</h3>
               <p>Years of Experience</p>
             </StatItem>
             <StatItem>
-              <h3>50+</h3>
-              <p>Projects Completed</p>
+              <h3>5+</h3>
+              <p>Projects Completed/Participated</p>
             </StatItem>
           </Stats>
           
