@@ -1,71 +1,100 @@
-# Getting Started with Create React App
+# My Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Portfolio Preview](src/assets/images/projects/preview.png)
 
-## Available Scripts
+## 📋 Overview
 
-In the project directory, you can run:
+A modern, responsive portfolio website built with React to showcase my projects, skills, and professional experience. The site features a clean, intuitive interface with dark/light theme support and interactive elements.
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Responsive Design**: Looks great on all devices from mobile to desktop
+- **Dark/Light Theme**: Toggle between themes with a smooth transition
+- **Interactive UI**: Engaging animations and transitions using Framer Motion
+- **Project Showcase**: Gallery of my work with detailed descriptions
+- **Skills Section**: Visual representation of my technical skills
+- **Contact Form**: Easy way for visitors to reach out via email
+- **Particle Effects**: Dynamic background elements for visual interest
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Technologies
 
-### `npm test`
+- **React** - Frontend library for building the user interface
+- **Styled Components** - For component-based styling
+- **Framer Motion** - For smooth animations and transitions
+- **React Router** - For seamless navigation
+- **EmailJS** - For handling the contact form functionality
+- **React Parallax Tilt** - For interactive tilt effects
+- **React TSParticles** - For background particle effects
+- **React Icons** - For a wide range of icon options
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (v14.0.0 or later)
+- npm (v6.0.0 or later)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/portfolio-website.git
+   ```
 
-### `npm run eject`
+2. Navigate to the project directory
+   ```bash
+   cd portfolio-website
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Install dependencies
+   ```bash
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Start the development server
+   ```bash
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. Open [http://localhost:3000](http://localhost:3000) to view it in your browser
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📦 Build
 
-## Learn More
+To build the app for production:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm run build
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This generates a `build` folder with optimized, minified files ready for deployment.
 
-### Code Splitting
+## 📝 Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+src/
+  ├── assets/           # Images and other static assets
+  ├── components/       # Reusable React components
+  ├── context/          # React context for state management
+  ├── pages/            # Main page components
+  ├── styles/           # Global styles and themes
+  └── utils/            # Utility functions and configurations
+```
 
-### Analyzing the Bundle Size
+## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/G4z0/portfolio-website/issues).
 
-### Making a Progressive Web App
+## 📄 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-### Advanced Configuration
+## 📬 Contact
 
-You can reach me at kamuil1234@gmail.com or connect with me on:
+You can reach me at your.email@example.com or connect with me on:
 
-- [LinkedIn](https://www.linkedin.com/in/grzelinski/)
+- [LinkedIn](https://linkedin.com/in/grzelinski)
 - [GitHub](https://github.com/G4z0)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-⭐️ From [G4zO](https://github.com/G4z0)
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+⭐️ From [Your Name](https://github.com/G4z0)
