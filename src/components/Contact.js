@@ -119,7 +119,7 @@ const MailtoButton = styled(motion.a)`
 
 const ContactStats = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-lg);
   margin-bottom: var(--spacing-2xl);
   
@@ -129,6 +129,10 @@ const ContactStats = styled.div`
 `;
 
 const StatCard = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: var(--card-bg);
   padding: var(--spacing-lg);
   border-radius: var(--radius-lg);
@@ -155,7 +159,7 @@ const StatCard = styled(motion.div)`
 
 const Contact = () => {
   const stats = [
-    { number: '3', text: 'Successful Projects' },
+    { number: '5', text: 'Successful Projects' },
     { number: '2+', text: 'Years Experience' }
   ];
 
