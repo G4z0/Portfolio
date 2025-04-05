@@ -22,7 +22,6 @@ A modern, responsive portfolio website built with React to showcase my projects,
 - **Styled Components** - For component-based styling
 - **Framer Motion** - For smooth animations and transitions
 - **React Router** - For seamless navigation
-- **EmailJS** - For handling the contact form functionality
 - **React Parallax Tilt** - For interactive tilt effects
 - **React TSParticles** - For background particle effects
 - **React Icons** - For a wide range of icon options

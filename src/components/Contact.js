@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { FiMail, FiMapPin } from 'react-icons/fi';
-import emailjs from '@emailjs/browser';
 
 const ContactSection = styled.section`
   background-color: var(--section-dark);
@@ -139,7 +138,7 @@ const TextArea = styled.textarea`
   }
 `;
 
-const SubmitButton = styled(motion.button)`
+const MailtoButton = styled(motion.a)`
   background: var(--gradient);
   color: var(--white);
   padding: var(--spacing-sm) var(--spacing-lg);
@@ -147,29 +146,15 @@ const SubmitButton = styled(motion.button)`
   font-weight: 500;
   font-size: var(--fs-md);
   width: 100%;
+  display: block;
+  text-align: center;
+  text-decoration: none;
   transition: var(--transition);
   
-  &:hover:not(:disabled) {
+  &:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-md);
   }
-  
-  &:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-  }
-`;
-
-const SuccessMessage = styled(motion.div)`
-  background: rgba(34, 197, 94, 0.1);
-  color: var(--success);
-  padding: var(--spacing-md);
-  border-radius: var(--radius-md);
-  margin-bottom: var(--spacing-md);
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  border: 1px solid var(--success);
 `;
 
 const ErrorText = styled.span`
@@ -223,8 +208,6 @@ const Contact = () => {
   });
   
   const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
   
   const validateForm = () => {
     const newErrors = {};
@@ -266,46 +249,12 @@ const Contact = () => {
     }
   };
   
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const generateMailtoLink = () => {
+    if (!validateForm()) return '#';
     
-    if (!validateForm()) return;
-    
-    setIsSubmitting(true);
-    
-    try {
-      await emailjs.send(
-        'service_v6kidk1',
-        'template_lo87vcp',
-        {
-          title: formData.subject,
-          name: formData.name,
-          message: formData.message,
-          email: formData.email
-        },
-        '3KG9QPdyGwgAEBkZH'  // Updated public key
-      );
-      
-      setShowSuccess(true);
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-      
-      setTimeout(() => {
-        setShowSuccess(false);
-      }, 5000);
-    } catch (error) {
-      console.error('Error sending email:', error);
-      setErrors(prev => ({
-        ...prev,
-        submit: 'Failed to send message. Please try again.'
-      }));
-    } finally {
-      setIsSubmitting(false);
-    }
+    const { name, email, subject, message } = formData;
+    const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${message}`;
+    return `mailto:kamuil1234@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
   };
 
   const stats = [
@@ -386,22 +335,12 @@ const Contact = () => {
           </ContactInfo>
 
           <ContactForm
-            onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
+            onSubmit={(e) => e.preventDefault()}
           >
-            {showSuccess && (
-              <SuccessMessage
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-              >
-                <FiMail /> Thank you for your message! I'll get back to you soon.
-              </SuccessMessage>
-            )}
-
             <FormGroup>
               <Label>Name</Label>
               <Input
@@ -449,14 +388,14 @@ const Contact = () => {
               {errors.message && <ErrorText>{errors.message}</ErrorText>}
             </FormGroup>
 
-            <SubmitButton
-              type="submit"
-              disabled={isSubmitting}
+            <MailtoButton
+              href={generateMailtoLink()}
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.98 }}
+              onClick={validateForm}
             >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
-            </SubmitButton>
+              Open Email Client
+            </MailtoButton>
           </ContactForm>
         </ContactContainer>
       </Container>

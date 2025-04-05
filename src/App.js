@@ -9,10 +9,6 @@ import Footer from './components/Footer';
 import ThemeSwitcher from './components/ThemeSwitcher';
 import GlobalStyles from './styles/GlobalStyles';
 import { ThemeProvider } from './context/ThemeContext';
-import { initEmailJS } from './utils/emailConfig';
-
-// Initialize EmailJS
-initEmailJS();
 
 function App() {
   useEffect(() => {
