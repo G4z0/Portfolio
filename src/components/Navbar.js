@@ -9,11 +9,11 @@ const NavbarContainer = styled.nav`
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: ${({ scrolled }) => scrolled ? 'var(--navbar-bg)' : 'transparent'};
-  backdrop-filter: ${({ scrolled }) => scrolled ? 'blur(10px)' : 'none'};
-  box-shadow: ${({ scrolled }) => scrolled ? 'var(--shadow-md)' : 'none'};
+  background-color: ${({ scrolled }) => scrolled === "true" ? 'var(--navbar-bg)' : 'transparent'};
+  backdrop-filter: ${({ scrolled }) => scrolled === "true" ? 'blur(10px)' : 'none'};
+  box-shadow: ${({ scrolled }) => scrolled === "true" ? 'var(--shadow-md)' : 'none'};
   transition: var(--transition);
-  border-bottom: ${({ scrolled }) => scrolled ? '1px solid var(--card-border)' : 'none'};
+  border-bottom: ${({ scrolled }) => scrolled === "true" ? '1px solid var(--card-border)' : 'none'};
 `;
 
 const NavInner = styled.div`
@@ -29,7 +29,7 @@ const NavInner = styled.div`
 const Logo = styled.a`
   font-size: var(--fs-xl);
   font-weight: 700;
-  color: ${({ scrolled }) => scrolled ? 'var(--text-primary)' : 'var(--white)'};
+  color: ${({ scrolled }) => scrolled === "true" ? 'var(--text-primary)' : 'var(--white)'};
   transition: var(--transition);
   
   span {
@@ -48,7 +48,7 @@ const NavLinks = styled.div`
 `;
 
 const NavLink = styled.a`
-  color: ${({ scrolled }) => scrolled ? 'var(--text-primary)' : 'var(--white)'};
+  color: ${({ scrolled }) => scrolled === "true" ? 'var(--text-primary)' : 'var(--white)'};
   font-weight: 500;
   transition: var(--transition);
   position: relative;
@@ -75,7 +75,7 @@ const NavLink = styled.a`
 
 const MenuButton = styled.button`
   display: none;
-  color: ${({ scrolled }) => scrolled ? 'var(--text-primary)' : 'var(--white)'};
+  color: ${({ scrolled }) => scrolled === "true" ? 'var(--text-primary)' : 'var(--white)'};
   font-size: var(--fs-2xl);
   transition: var(--transition);
   
@@ -162,23 +162,23 @@ const Navbar = () => {
   
   return (
     <>
-      <NavbarContainer scrolled={scrolled}>
+      <NavbarContainer scrolled={scrolled.toString()}>
         <NavInner>
-          <Logo href="#home" scrolled={scrolled}>
+          <Logo href="#home" scrolled={scrolled.toString()}>
             Port<span>folio</span>
           </Logo>
           
           <NavLinks>
-            <NavLink href="#home" scrolled={scrolled}>Home</NavLink>
-            <NavLink href="#about" scrolled={scrolled}>About</NavLink>
-            <NavLink href="#skills" scrolled={scrolled}>Skills</NavLink>
-            <NavLink href="#projects" scrolled={scrolled}>Projects</NavLink>
-            <NavLink href="#contact" scrolled={scrolled}>Contact</NavLink>
+            <NavLink href="#home" scrolled={scrolled.toString()}>Home</NavLink>
+            <NavLink href="#about" scrolled={scrolled.toString()}>About</NavLink>
+            <NavLink href="#skills" scrolled={scrolled.toString()}>Skills</NavLink>
+            <NavLink href="#projects" scrolled={scrolled.toString()}>Projects</NavLink>
+            <NavLink href="#contact" scrolled={scrolled.toString()}>Contact</NavLink>
           </NavLinks>
           
           <MenuButton 
             onClick={toggleMenu} 
-            scrolled={scrolled}
+            scrolled={scrolled.toString()}
             aria-label="Toggle menu"
           >
             <FiMenu />

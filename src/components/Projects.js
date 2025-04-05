@@ -46,19 +46,19 @@ const FilterContainer = styled.div`
   flex-wrap: wrap;
 `;
 
-const FilterButton = styled.button`
+const FilterButton = styled(motion.button)`
   padding: var(--spacing-sm) var(--spacing-lg);
   border-radius: var(--radius-full);
-  background: ${props => props.active ? 'var(--gradient)' : 'var(--background-secondary)'};
-  color: ${props => props.active ? 'var(--white)' : 'var(--text-secondary)'};
+  background: ${props => props.active === "true" ? 'var(--gradient)' : 'var(--background-secondary)'};
+  color: ${props => props.active === "true" ? 'var(--white)' : 'var(--text-secondary)'};
   border: none;
   font-weight: 500;
   transition: var(--transition);
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: ${props => props.active ? 'var(--shadow-md)' : 'none'};
-    background: ${props => props.active ? 'var(--gradient)' : 'var(--background-tertiary)'};
+    box-shadow: ${props => props.active === "true" ? 'var(--shadow-md)' : 'none'};
+    background: ${props => props.active === "true" ? 'var(--gradient)' : 'var(--background-tertiary)'};
   }
 `;
 
@@ -252,7 +252,7 @@ const Projects = () => {
           {filters.map((filter, index) => (
             <FilterButton
               key={filter.value}
-              active={activeFilter === filter.value}
+              active={activeFilter === filter.value ? "true" : "false"}
               onClick={() => setActiveFilter(filter.value)}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
